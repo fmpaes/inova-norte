@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inova Norte Summit 26 | 12 e 13 de novembro, Porto Velho/RO</title>
+<meta name="description" content="Inova Norte Summit 26: Os Desafios da Soberania Digital na Amazônia. 12 e 13 de novembro no Murano Eventos, Porto Velho/RO. Programação completa e inscrições.">
+<meta name="theme-color" content="#f3f1f6">
+<link rel="icon" href="simbolo.svg">
+<style>
+/* DM Sans (variável) — mesmas fontes do arquivo do marketing */
+@font-face{font-family:"DM Sans Variable";font-style:normal;font-display:swap;font-weight:100 1000;src:url(dmsans-latin-ext.woff2) format("woff2-variations");unicode-range:U+100-2BA,U+2BD-2C5,U+2C7-2CC,U+2CE-2D7,U+2DD-2FF,U+304,U+308,U+329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"DM Sans Variable";font-style:normal;font-display:swap;font-weight:100 1000;src:url(dmsans-latin.woff2) format("woff2-variations");unicode-range:U+??,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+304,U+308,U+329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  /* paleta do marketing, que é a mesma do site original */
+  --bg:#f3f1f6; --ink:#15121b; --muted:#5a5564; --line:#ddd8e5; --card:#fff;
+  --roxo:#67459b; --lilas:#987cc9; --teal:#44abb1; --ouro:#d4a017; --verde:#1d5c3e;
+  --font:"DM Sans Variable","DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(20px,3.2vw,56px); --maxw:1280px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video{max-width:100%;display:block}
+img{height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+h1,h2,h3,p{margin:0}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+:focus-visible{outline:3px solid var(--roxo);outline-offset:3px;border-radius:8px}
+.dark :focus-visible{outline-color:#fff}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:10px 16px;border-radius:999px;z-index:300}
+.skip:focus{left:12px}
+
+/* botões em pílula (padrão do marketing), alvo de toque >= 48px */
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;border-radius:999px;font-weight:600;font-size:1rem;background:#fff;color:var(--ink);transition:background .25s,color .25s,transform .2s;white-space:nowrap}
+.pill:hover{background:var(--ink);color:#fff}
+.pill--roxo{background:var(--roxo);color:#fff}
+.pill--roxo:hover{background:var(--ink)}
+.pill--ouro{background:var(--ouro);color:#241a00}
+.pill--ouro:hover{background:var(--ink);color:#fff}
+.pill--line{background:transparent;box-shadow:inset 0 0 0 1.5px currentColor}
+.pill--line:hover{background:#fff;color:var(--ink)}
+.pill--lg{min-height:58px;padding:0 34px;font-size:1.1rem}
+.pill svg{width:18px;height:18px}
+
+/* navegação flutuante */
+.nav{position:fixed;inset:14px 0 auto 0;z-index:100;pointer-events:none}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.nav>.wrap>*{pointer-events:auto}
+.nav .logo{background:#fff;border-radius:999px;padding:6px 16px;display:flex;align-items:center;box-shadow:0 4px 18px rgba(21,18,27,.12)}
+.nav .logo img{height:34px;width:auto}
+.nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:6px;border-radius:999px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);box-shadow:0 4px 18px rgba(21,18,27,.12)}
+.nav ul a{display:flex;align-items:center;min-height:40px;padding:0 16px;border-radius:999px;font-weight:500;font-size:.95rem}
+.nav ul a:hover{background:var(--bg)}
+.nav ul a.cta{background:var(--roxo);color:#fff}
+.nav ul a.cta:hover{background:var(--ink)}
+.burger{display:none;width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 4px 18px rgba(21,18,27,.12);place-items:center}
+.burger i,.burger i::before,.burger i::after{display:block;width:22px;height:2px;background:var(--ink);position:relative;transition:.2s}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0}
+.burger i::before{top:-7px}.burger i::after{top:7px}
+.burger[aria-expanded=true] i{background:transparent}
+.burger[aria-expanded=true] i::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded=true] i::after{top:0;transform:rotate(-45deg)}
+
+/* hero com vídeo local */
+.hero{position:relative;isolation:isolate;min-height:min(100svh,860px);display:flex;align-items:flex-end;color:#fff;background:#0d0a14}
+.hero__media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.hero__media video{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,10,20,.35) 0%,rgba(13,10,20,.35) 35%,rgba(13,10,20,.9) 100%)}
+.hero .wrap{padding-block:140px 56px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border-radius:999px;padding:7px 16px}
+.hero h1{font-size:clamp(2.4rem,7.2vw,6.2rem);line-height:1;font-weight:500;letter-spacing:-.035em;margin:20px 0 22px;max-width:15ch;text-wrap:balance}
+.hero h1 em{font-style:normal;color:#c9b6ee}
+.hero p.lead{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:54ch;color:#ece8f4}
+.meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin:24px 0 30px;font-weight:500}
+.meta span{display:inline-flex;gap:10px;align-items:center}
+.meta svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.hero .pill--line{color:#fff}
+.count{display:flex;align-items:center;gap:10px;margin-top:32px;flex-wrap:wrap}
+.count>span{font-size:.92rem;color:#d9d2e6;margin-right:4px}
+.count div{min-width:76px;text-align:center;padding:8px 10px;border-radius:14px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px)}
+.count b{display:block;font-size:1.7rem;line-height:1.15;font-weight:600}
+.count small{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#d9d2e6}
+.vctl{position:absolute;right:var(--pad);bottom:20px;width:48px;height:48px;border-radius:50%;border:2px solid #fff;background:rgba(13,10,20,.55);display:grid;place-items:center}
+.vctl svg{width:20px;height:20px;fill:#fff}
+.vctl:hover{background:rgba(13,10,20,.85)}
+
+/* manifesto + colagem */
+.manifesto{padding:clamp(72px,10vw,150px) 0 clamp(48px,6vw,90px);text-align:center;position:relative}
+.manifesto h2{font-size:clamp(2rem,5vw,4.2rem);font-weight:500;line-height:1.08;letter-spacing:-.03em;max-width:17ch;margin-inline:auto;text-wrap:balance}
+.manifesto h2 b{font-weight:500;color:var(--roxo)}
+.manifesto p{margin:22px auto 0;max-width:50ch;color:var(--muted);font-size:1.1rem}
+.cloud{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(8px,1.4vw,20px);margin-top:clamp(40px,6vw,80px);align-items:center}
+.cloud figure{margin:0;border-radius:8px;overflow:hidden;box-shadow:0 14px 34px rgba(21,18,27,.18);transform:rotate(var(--r,0deg)) translateY(var(--y,0));background:#ddd}
+.cloud figure:nth-child(1){--r:-3deg;--y:10px}.cloud figure:nth-child(2){--r:2deg;--y:-14px}.cloud figure:nth-child(3){--r:-1.5deg;--y:18px}
+.cloud figure:nth-child(4){--r:3deg;--y:-6px}.cloud figure:nth-child(5){--r:-2.5deg;--y:14px}.cloud figure:nth-child(6){--r:1.5deg;--y:-10px}
+.cloud figure:nth-child(7){--r:2deg;--y:-8px}.cloud figure:nth-child(8){--r:-2deg;--y:12px}.cloud figure:nth-child(9){--r:1deg;--y:-16px}
+.cloud figure:nth-child(10){--r:-3deg;--y:8px}.cloud figure:nth-child(11){--r:2.5deg;--y:-12px}.cloud figure:nth-child(12){--r:-1deg;--y:16px}
+.cloud img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.credit{margin-top:22px;font-size:.8rem;color:var(--muted);text-align:center}
+
+/* seções */
+section{padding-block:clamp(64px,9vw,128px)}
+.label{font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--roxo)}
+h2.big{font-size:clamp(2rem,5vw,4rem);font-weight:500;line-height:1.05;letter-spacing:-.03em;text-wrap:balance}
+.row2{display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,3fr);gap:clamp(24px,5vw,80px);border-top:1px solid var(--line);padding-top:28px}
+
+/* sobre */
+.about .txt p{margin-bottom:18px;max-width:64ch;color:#2a2633;font-size:1.05rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:36px;max-width:820px}
+.facts div{background:#fff;border-radius:18px;padding:18px 20px}
+.facts b{display:block;font-size:2rem;font-weight:500;color:var(--roxo);line-height:1.1;letter-spacing:-.02em}
+.facts span{font-size:.92rem;color:var(--muted)}
+
+/* painéis: cartões com foto */
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+.panel{position:relative;isolation:isolate;border-radius:22px;overflow:hidden;min-height:clamp(320px,38vw,520px);display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(20px,2.4vw,36px);color:#fff;background:#111}
+.panel:nth-child(5){grid-column:1/-1;min-height:clamp(340px,42vw,600px)}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s}
+.panel:hover img{transform:scale(1.04)}
+.panel::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,10,20,.05) 10%,rgba(13,10,20,.9) 100%)}
+.panel .no{position:absolute;top:18px;left:20px;font-size:.8rem;font-weight:600;background:rgba(13,10,20,.55);backdrop-filter:blur(6px);border-radius:999px;padding:4px 12px}
+.panel small{font-size:.85rem;opacity:.92;font-weight:500}
+.panel h3{font-size:clamp(1.9rem,4vw,3.4rem);font-weight:500;line-height:1.02;letter-spacing:-.03em;margin:8px 0 8px}
+.panel p{max-width:46ch;opacity:.95}
+.panel .pill{margin-top:16px;align-self:flex-start;min-height:42px;padding:0 20px;font-size:.92rem}
+
+/* programação */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 18px}
+.chip{min-height:44px;padding:0 20px;border-radius:999px;background:#fff;font-weight:500;box-shadow:inset 0 0 0 1px var(--line);transition:.2s}
+.chip:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;box-shadow:none}
+.agenda{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:110px 1fr auto;gap:8px 24px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)}
+.item[hidden]{display:none}
+.item time{font-weight:600;font-variant-numeric:tabular-nums;color:var(--roxo)}
+.item h3{font-size:1.15rem;font-weight:500;line-height:1.3}
+.item p{color:var(--muted);font-size:.98rem;margin-top:2px}
+.tag{font-size:.78rem;font-weight:600;border-radius:999px;padding:4px 12px;background:#fff;white-space:nowrap;box-shadow:inset 0 0 0 1px var(--line)}
+.tag--painel{background:var(--roxo);color:#fff;box-shadow:none}
+.tag--palestra{background:var(--teal);color:#06292b;box-shadow:none}
+.tag--pausa{color:var(--muted)}
+.item .day{grid-column:2;font-size:.82rem;color:var(--muted)}
+.agenda-foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:16px;color:var(--muted);font-size:.9rem}
+
+/* palestrantes */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:40px;align-items:start}
+.spk{background:#fff;border-radius:22px;padding:12px 12px 8px}
+.spk .ph{border-radius:14px;overflow:hidden;aspect-ratio:1/1.05;background:#ddd}
+.spk .ph img{width:100%;height:100%;object-fit:cover;object-position:top}
+.spk .ph.noimg{display:grid;place-items:center;font-size:3rem;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--roxo),var(--lilas))}
+.spk h3{font-size:1.15rem;font-weight:600;line-height:1.25;margin:14px 8px 4px}
+.spk .org{margin:0 8px;display:inline-block;font-size:.8rem;font-weight:600;background:var(--bg);color:var(--roxo);border-radius:999px;padding:3px 12px}
+.spk details{margin:2px 8px 0}
+.spk summary{list-style:none;cursor:pointer;min-height:48px;display:flex;align-items:center;justify-content:space-between;font-weight:600;color:var(--roxo)}
+.spk summary::-webkit-details-marker{display:none}
+.spk summary::after{content:"+";font-size:1.4rem}
+.spk details[open] summary::after{content:"–"}
+.spk details p{font-size:.95rem;color:#3a3544;padding-bottom:12px}
+
+/* patrocinadores */
+.logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:36px}
+.logos div{background:#fff;border-radius:18px;height:104px;display:grid;place-items:center;padding:16px 24px}
+.logos img{max-height:56px;width:auto;object-fit:contain}
+.logos+.pill{margin-top:28px}
+
+/* comunidade + hotel */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border-radius:26px;padding:clamp(26px,3vw,44px);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.card h3{font-size:clamp(1.7rem,3vw,2.5rem);font-weight:500;line-height:1.08;letter-spacing:-.02em}
+.card--roxo{background:var(--roxo);color:#fff}
+.card--roxo .msg{border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.3);margin-top:6px}
+.card--branco{background:#fff}
+.card--branco img.hotel{max-width:340px;width:100%}
+.card .pill{margin-top:auto}
+.card--branco .pill{background:var(--ouro)}
+.card--branco .pill:hover{background:var(--ink);color:#fff}
+.card--roxo .pill{background:var(--ouro);color:#241a00}
+.card--roxo .pill:hover{background:#fff}
+
+/* local */
+.local .name{font-size:clamp(2.4rem,7vw,6rem);font-weight:500;letter-spacing:-.04em;line-height:1;margin:14px 0 12px}
+.local address{font-style:normal;font-size:1.15rem;color:#2a2633}
+.days{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.days div{background:#fff;border-radius:18px;padding:20px 22px}
+.days b{display:block;font-size:1.2rem;font-weight:600}
+.days span{color:var(--muted)}
+.map{margin-top:18px;border-radius:22px;overflow:hidden;background:#e5e1ec;height:clamp(300px,40vw,440px)}
+.map iframe{width:100%;height:100%;border:0}
+.map-link{margin-top:16px}
+
+/* fechamento */
+.closing{text-align:center}
+.closing h2{font-size:clamp(2.6rem,8vw,7rem);font-weight:500;letter-spacing:-.04em;line-height:.98}
+.closing p{margin:16px 0 30px;color:var(--muted);font-size:1.1rem}
+.closing .cta-row{justify-content:center}
+.biglogo{margin-top:clamp(48px,8vw,110px);display:flex;justify-content:center}
+.biglogo img{width:min(640px,80%);height:auto}
+
+footer{border-top:1px solid var(--line);padding:40px 0 110px;font-size:.92rem}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
+.fgrid b{display:block;font-weight:600;margin-bottom:4px}
+.fgrid p,.fgrid address{font-style:normal;color:var(--muted)}
+.social{display:flex;gap:8px;margin-top:8px}
+.social a{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.social a:hover{background:var(--ink)}
+.social a:hover svg{stroke:#fff}
+.social svg{width:22px;height:22px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.copy{margin-top:26px;color:var(--muted);font-size:.82rem}
+
+.sticky{display:none}
+
+@media (max-width:900px){
+  .nav ul{display:none;position:absolute;top:62px;right:var(--pad);flex-direction:column;border-radius:24px;padding:10px;min-width:240px}
+  .nav ul.open{display:flex}
+  .nav ul a{min-height:48px}
+  .burger{display:grid}
+  .cloud{grid-template-columns:repeat(3,1fr)}
+  .cloud figure:nth-child(n+10){display:none}
+  .row2{grid-template-columns:minmax(0,1fr);gap:12px}
+  .panels,.two,.days{grid-template-columns:minmax(0,1fr)}
+  .panel:nth-child(5){grid-column:auto}
+  .item{grid-template-columns:84px 1fr}
+  .item .tag{grid-column:2;justify-self:start}
+  .fgrid{grid-template-columns:1fr}
+  .sticky{display:flex;position:fixed;inset:auto 0 0 0;z-index:90;align-items:center;gap:12px;padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .sticky span{font-size:.82rem;line-height:1.25;color:var(--muted)}
+  .sticky span b{display:block;color:var(--ink)}
+  .sticky .pill{margin-left:auto;min-height:48px;padding:0 22px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.panel img{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Inova Norte — início"><img src="Logo-1.svg" alt="Inova Norte" width="64" height="34"></a>
+    <nav aria-label="Principal">
+      <ul id="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#programacao">Programação</a></li>
+        <li><a href="#palestrantes">Palestrantes</a></li>
+        <li><a href="#patrocinadores">Patrocinadores</a></li>
+        <li><a href="#local">Local</a></li>
+        <li><a class="cta" href="https://www.sympla.com.br/evento/inova-norte-2026/3587019" target="_blank" rel="noopener">Inscrições</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><i></i></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<div class="hero dark" id="inicio">
+  <div class="hero__media" aria-hidden="true">
+    <video id="hv" muted loop playsinline autoplay preload="auto" poster="poster.jpg"><source src="hero.mp4" type="video/mp4"></video>
+  </div>
+  <div class="wrap">
+    <span class="eyebrow">Summit 26 · Porto Velho/RO</span>
+    <h1>Os desafios da <em>Soberania Digital</em> na Amazônia</h1>
+    <p class="lead">Cinco painéis e dois dias para discutir infraestrutura, dados, IA e serviço público com quem conecta o Norte.</p>
+    <div class="meta">
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>12 e 13 de novembro de 2026</span>
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Murano Eventos · Porto Velho/RO</span>
+    </div>
+    <div class="cta-row">
+      <a class="pill pill--ouro pill--lg" href="https://www.sympla.com.br/evento/inova-norte-2026/3587019" target="_blank" rel="noopener">Quero me inscrever
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="pill pill--line pill--lg" href="#programacao">Ver a programação</a>
+    </div>
+    <div class="count" id="count" role="timer" aria-live="off">
+      <span>Faltam</span>
+      <div><b id="cd">--</b><small>dias</small></div>
+      <div><b id="ch">--</b><small>horas</small></div>
+      <div><b id="cm">--</b><small>min</small></div>
+    </div>
+  </div>
+  <button class="vctl" id="vctl" type="button" aria-label="Pausar vídeo de fundo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
+</div>
+
+<!-- MANIFESTO + COLAGEM -->
+<div class="manifesto">
+  <div class="wrap">
+    <h2>Soberania digital começa por <b>quem conecta o Norte.</b></h2>
+    <p>Mais de 400 pessoas de empresas, universidades e governo na mesma sala. Veja como foi a edição anterior.</p>
+    <div class="cloud" id="cloud"></div>
+    <p class="credit">Imagens: edição anterior</p>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap">
+    <div class="row2">
+      <span class="label">O Inova Norte</span>
+      <div class="txt">
+        <p>O Inova Norte é o principal evento de inovação e tecnologia do Norte do Brasil, criado para reunir empresas, especialistas, universidades e representantes do poder público em torno dos desafios tecnológicos que moldam o futuro da região e do país.</p>
+        <p>Mais do que um evento de palestras, o Inova Norte nasce da necessidade de aproximar o Norte do Brasil das principais discussões tecnológicas nacionais — levando para a região nomes de referência, conteúdo técnico de ponta e oportunidades reais de conexão entre mercado, academia e governo.</p>
+        <p>Em 2026, o evento chega com o tema “Os Desafios da Soberania Digital na Amazônia”, colocando em pauta temas estratégicos como infraestrutura, conectividade e Data Center — discussões essenciais para o desenvolvimento tecnológico e econômico da Amazônia.</p>
+        <p>Ao reunir parceiros, patrocinadores, instituições de ensino e lideranças do setor, o Inova Norte se consolida como um espaço de posicionamento estratégico para quem quer estar à frente das transformações digitais que impactam a região.</p>
+        <div class="facts">
+          <div><b>400</b><span>participantes</span></div>
+          <div><b>2 dias</b><span>12 e 13 de novembro</span></div>
+          <div><b>5</b><span>painéis temáticos</span></div>
+          <div><b>#1</b><span>maior evento de networking do Norte</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAINÉIS -->
+<section id="paineis" style="padding-top:0">
+  <div class="wrap">
+    <span class="label">Painéis confirmados</span>
+    <h2 class="big" style="margin-top:10px">Cinco conversas para decidir o futuro digital da região</h2>
+    <div class="panels">
+      <article class="panel dark"><img src="painel-1.webp" alt="" loading="lazy"><span class="no">01 / 05</span><small>Dia 1 · quinta, 12/11 · 11h–12h30</small><h3>Conectar a Amazônia</h3><p>O desafio da infraestrutura digital na maior região do Brasil.</p><a class="pill" href="#programacao" data-filter="Dia 1">Ver programação →</a></article>
+      <article class="panel dark"><img src="painel-2.webp" alt="" loading="lazy"><span class="no">02 / 05</span><small>Dia 1 · quinta, 12/11 · 14h–15h30</small><h3>Governo Inteligente</h3><p>IA e Dados transformando os Serviços Públicos.</p><a class="pill" href="#programacao" data-filter="Dia 1">Ver programação →</a></article>
+      <article class="panel dark"><img src="painel-3.webp" alt="" loading="lazy"><span class="no">03 / 05</span><small>Dia 2 · sexta, 13/11 · 11h–12h30</small><h3>Amazônia Conectada</h3><p>Como vencer a última fronteira da infraestrutura digital brasileira?</p><a class="pill" href="#programacao" data-filter="Dia 2">Ver programação →</a></article>
+      <article class="panel dark"><img src="painel-4.webp" alt="" loading="lazy"><span class="no">04 / 05</span><small>Dia 2 · sexta, 13/11 · 14h–15h30</small><h3>Da Fibra ao Satélite</h3><p>Qual é a arquitetura ideal para conectar o Norte?</p><a class="pill" href="#programacao" data-filter="Dia 2">Ver programação →</a></article>
+      <article class="panel dark"><img src="painel-5.webp" alt="" loading="lazy"><span class="no">05 / 05</span><small>Dia 2 · sexta, 13/11 · 16h–17h</small><h3>Norte 2030</h3><p>Como tecnologia e conectividade podem redesenhar os serviços públicos na Amazônia?</p><a class="pill" href="#programacao" data-filter="Dia 2">Ver programação →</a></article>
+    </div>
+    <p class="credit">Imagens: edição anterior</p>
+  </div>
+</section>
+
+<!-- PROGRAMAÇÃO -->
+<section id="programacao" style="padding-top:0">
+  <div class="wrap">
+    <div class="row2">
+      <span class="label">Programação</span>
+      <div>
+        <h2 class="big">Hora a hora, nos dois dias</h2>
+        <div class="chips" role="group" aria-label="Filtrar programação" id="chips"></div>
+        <ol class="agenda" id="agenda"></ol>
+        <div class="agenda-foot"><span>Programação sujeita a alterações.</span><span id="count-act" aria-live="polite"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PALESTRANTES -->
+<section id="palestrantes" style="padding-top:0">
+  <div class="wrap">
+    <div class="row2">
+      <span class="label">Quem sobe ao palco</span>
+      <div>
+        <h2 class="big">Palestrantes</h2>
+        <p style="color:var(--muted);margin-top:12px;max-width:56ch">Lideranças do governo, da academia, de entidades da internet e do mercado de telecom.</p>
+      </div>
+    </div>
+    <div class="grid" id="spk"></div>
+  </div>
+</section>
+
+<!-- PATROCINADORES -->
+<section id="patrocinadores" style="padding-top:0">
+  <div class="wrap">
+    <div class="row2">
+      <span class="label">Quem faz acontecer</span>
+      <div>
+        <h2 class="big">Patrocinadores</h2>
+        <div class="logos">
+          <div><img src="PADTEC_RGB-300x84.png" alt="Padtec" loading="lazy" width="208" height="58"></div>
+          <div><img src="Logo-Catolica-300x119.jpg" alt="Católica de Rondônia" loading="lazy" width="146" height="58"></div>
+          <div><img src="Logo-Multi-Pro-ZTE-300x91.png" alt="Multi Pro ZTE" loading="lazy" width="191" height="58"></div>
+          <div><img src="logo-nbs-300x132.png" alt="NBS Telecom" loading="lazy" width="132" height="58"></div>
+        </div>
+        <a class="pill pill--roxo" href="https://api.whatsapp.com/send?phone=6935363185" target="_blank" rel="noopener">Quero patrocinar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMUNIDADE + HOTEL -->
+<section style="padding-top:0">
+  <div class="wrap two">
+    <div class="card card--roxo dark">
+      <h3>Participe da nossa comunidade</h3>
+      <p>Fique ligado em tudo pelo seu WhatsApp.</p>
+      <img class="msg" src="MSG.png" alt="Mensagem de boas-vindas no canal do WhatsApp da Comunidade Inova Norte" loading="lazy" width="632" height="283">
+      <a class="pill" href="https://whatsapp.com/channel/0029VbDTDZAF1YlSbJGmk63X" target="_blank" rel="noopener">Entrar no canal</a>
+    </div>
+    <div class="card card--branco">
+      <img class="hotel" src="MARCA-COMPLETA-SEM-FUNDO-CRIATIVA-scaled-1-1024x506.png" alt="Hotéis Larison" loading="lazy" width="340" height="168">
+      <h3>Hotel Larison Executive</h3>
+      <p>Hotel parceiro do Inova Norte, próximo ao local do evento.<br>Av. Carlos Gomes, 756, Caiari, Porto Velho/RO, CEP 76801-150</p>
+      <a class="pill" href="http://wa.me/5569984823378" target="_blank" rel="noopener">Faça sua reserva</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL -->
+<section class="local" id="local" style="padding-top:0">
+  <div class="wrap">
+    <div class="row2">
+      <span class="label">Local</span>
+      <div>
+        <h2 class="name">Murano Eventos</h2>
+        <address>Av. Rogério Weber, 1867 – Centro<br>Porto Velho (RO)</address>
+        <div class="days">
+          <div><b>Dia 1 · quinta, 12 de novembro</b><span>Credenciamento a partir das 8h · encerramento às 17h30</span></div>
+          <div><b>Dia 2 · sexta, 13 de novembro</b><span>Credenciamento a partir das 8h30 · happy hour às 17h30</span></div>
+        </div>
+        <div class="map"><iframe title="Mapa: Murano Eventos, Porto Velho" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Murano+Eventos+Av.+Rog%C3%A9rio+Weber+1867+Porto+Velho+RO&output=embed"></iframe></div>
+        <p class="map-link"><a class="pill pill--roxo" href="https://www.google.com/maps/search/?api=1&query=Murano+Eventos+Av.+Rog%C3%A9rio+Weber+1867+Porto+Velho" target="_blank" rel="noopener">Ver no mapa ↗</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section class="closing" id="inscricoes" style="padding-top:0">
+  <div class="wrap">
+    <h2>Nos vemos em Porto Velho.</h2>
+    <p>12 e 13 de novembro de 2026 · Murano Eventos</p>
+    <div class="cta-row">
+      <a class="pill pill--roxo pill--lg" href="https://www.sympla.com.br/evento/inova-norte-2026/3587019" target="_blank" rel="noopener">Quero me inscrever</a>
+      <a class="pill pill--line pill--lg" href="https://whatsapp.com/channel/0029VbDTDZAF1YlSbJGmk63X" target="_blank" rel="noopener">Entrar na comunidade do WhatsApp</a>
+    </div>
+    <div class="biglogo"><img src="Logo-1.svg" alt="Inova Norte Summit 26" width="640" height="336"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><b>Inova Norte Summit 2026</b><p>Os Desafios da Soberania Digital na Amazônia</p>
+        <div class="social">
+          <a href="https://www.instagram.com/inova_norte/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61594332964309" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></a>
+          <a href="http://youtube.com/@nbstelecom-j8l" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
+        </div>
+      </div>
+      <div><b>Murano Eventos</b><address>Av. Rogério Weber, 1867 – Centro<br>Porto Velho (RO)</address></div>
+      <div><b>Realização</b><p>NBS Telecom</p></div>
+    </div>
+    <p class="copy">© 2026 Thiago Lucena | Rede Global de Produções - CNPJ: 10.655.569/0001-49. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <span><b>12 e 13/11 · Porto Velho/RO</b>Inova Norte Summit 26</span>
+  <a class="pill pill--roxo" href="https://www.sympla.com.br/evento/inova-norte-2026/3587019" target="_blank" rel="noopener">Inscrições</a>
+</div>
+
+<script>
+/* ---------- dados ---------- */
+const AG=[
+ ["08h","","Credenciamento e coffee de recepção","Credenciamento",1],
+ ["09h30","","Abertura institucional — NBS Telecom","Abertura",1],
+ ["09h45","Os novos pilares da Soberania Digital","Dados, IA e Infraestrutura","Palestra",1],
+ ["10h45","","Coffee break e visita aos stands","Intervalo",1],
+ ["11h–12h30","O desafio da infraestrutura digital na maior região do Brasil","Conectar a Amazônia","Painel",1],
+ ["12h30","","Almoço e visita aos stands","Intervalo",1],
+ ["14h–15h30","IA e Dados transformando os Serviços Públicos","Governo Inteligente","Painel",1],
+ ["15h30","","Coffee break e visita aos stands","Intervalo",1],
+ ["16h","","Palestra — Daniel Fink","Palestra",1],
+ ["17h30","","Encerramento do dia (stand-up)","Encerramento",1],
+ ["08h30","","Credenciamento","Credenciamento",2],
+ ["09h30","","Palestra — Moreiras (NIC)","Palestra",2],
+ ["10h30","","Coffee break e visita aos stands","Intervalo",2],
+ ["11h–12h30","Como vencer a última fronteira da infraestrutura digital brasileira?","Amazônia Conectada","Painel",2],
+ ["12h30","","Almoço e visita aos stands","Intervalo",2],
+ ["14h–15h30","Qual é a arquitetura ideal para conectar o Norte?","Da Fibra ao Satélite","Painel",2],
+ ["15h30","","Coffee break e visita aos stands","Intervalo",2],
+ ["16h–17h","Como tecnologia e conectividade podem redesenhar os serviços públicos na Amazônia?","Norte 2030","Painel",2],
+ ["17h","","Visita aos stands","Networking",2],
+ ["17h30","","Happy hour de encerramento","Networking",2]
+];
+const DAYNAME={1:"Dia 1 · qui 12/11",2:"Dia 2 · sex 13/11"};
+const FILTERS=["Todos","Dia 1","Dia 2","Painéis","Palestras"];
+
+const S=[
+["Simone Ferreira","PCDF","Simone-Ferreira.jpg","Diretora de Tecnologia e Segurança da Informação da Polícia Civil do Distrito Federal (PCDF), com mais de 25 anos de experiência em tecnologia no setor público, especialmente em segurança pública. Mestre em Gestão Pública pela UnB, bacharel em Direito, especialista em TI e MBA em Gestão Estratégica em Segurança Pública e Privada pelo IDP. Certificada pelo INSEAD (França) no programa Women Leadership in Public Management. Atua com governança de dados, cibersegurança, modernização de sistemas críticos e aplicação responsável de IA no setor público."],
+["Daniel Fink","ICANN",null,"Diretor Sênior de Engajamento de Partes Interessadas para a América do Sul da ICANN, organização responsável pela coordenação global dos identificadores únicos da Internet. Está na ICANN desde 2014 e é baseado em São Paulo. Foi Diretor Executivo do Secretariado do NETmundial (2014) e Chefe do Setor de Ciência e Tecnologia da Embaixada do Brasil em Seul. Engenheiro eletricista pela PUC-RS e doutor em Ciência da Gestão pelo KAIST (Coreia do Sul)."],
+["Victor Hugo Lima de Sousa","NBS Telecom","inova.jpg","Profissional de TIC com mais de 18 anos de experiência em gestão, liderança de equipes, modernização tecnológica e projetos estratégicos. Atuou na Prefeitura de Rio Branco, Tribunal de Justiça do Acre, Polícia Civil do Acre, Secretaria de Estado de Saúde, Secretaria de Segurança Pública e Defensoria Pública do Estado. MBA em Liderança, Inovação e Gestão 3.0 e formações em segurança da informação e proteção de dados. Hoje atua na NBS Telecom e, desde 2026, é professor universitário na Uninorte."],
+["Ranieri Braga dos Santos","IFRO","Ranieri-Braga-dos-Santos.jpg","Mestre em Educação pela UNIR e professor EBTT de Informática do IFRO, Campus Porto Velho Zona Norte. Foi servidor da Prefeitura de Porto Velho por 12 anos e soma 13 anos de docência no ensino superior. Orienta startups e projetos de inovação no Centro de Inovação Tecnológica (CIT) e desenvolve projetos de impacto social voltados à inclusão, à sustentabilidade e às comunidades amazônicas, com foco em melhoria dos serviços públicos e govtechs na Região Norte."],
+["Jesaias Arruda","Abranet","JESAIAS-ARRUDA.jpg","Bacharel em Ciência da Computação pela Universidade Paulista de Manaus, com mais de 25 anos de experiência em TI e telecomunicações. Atua com internet, cloud computing, IA e transformação digital. É vice-presidente da Abranet, fundador da PorangaTech (startup de dados e IA), diretor executivo da ASEJAR (aceleradora de negócios) e atua como conselheiro e mentor em conselhos administrativos."],
+["Dr. Edson Pinto","dplaw Advogados","EDSON-PINTO.jpg","Edson Pontes Pinto é advogado e sócio do dplaw Advogados. Pós-doutorando em Direito pela PUC/RS (CNPq), doutor em Ciências Jurídicas pela Universidad de Granada, doutor em Direito pela PUC/RS e mestre em Direito pela PUC/SP. Também atua como professor universitário na FCR."],
+["Jhordano Malacarne","IFRO","JHORDANO.jpg","Doutor e mestre em Administração, especialista em TI e tecnólogo em Redes de Computadores. Professor do IFRO, coordenador do curso superior de Redes de Computadores e líder do Grupo de Pesquisa em Tecnologia, Comunicação e Governança (GTEC). Responsável pela infraestrutura de datacenter para pesquisa do IFRO Campus Porto Velho Zona Norte, com serviços de IA local e processamento geoespacial."],
+["Celso Ribas","Anatel","CELSO-RIBAS.jpg","Bacharel em Engenharia Elétrica pela Unifei (2004), mestre (2006) e doutor (2024) pela UFSC. Integra a Anatel desde 2009, quando ingressou em Manaus como Especialista em Regulação. Atualmente é Gerente Regional da Anatel nos estados do Amazonas, Acre, Rondônia e Roraima, região que corresponde a um quarto do território brasileiro."],
+["Marcelo Monteiro","Anatel","MARCELO-MONTEIRO.jpg","Graduado em Direito (UFG) e em Administração de Empresas e Administração Pública (UnB), com especialização em Direito Tributário pela PUC-GO; cursa MBA em Gestão de Negócios Digitais e IA pela ESALQ/USP. Servidor público desde 2005, atua na Anatel desde 2007 e, desde 2018, é gerente de Planejamento Estratégico da Agência."],
+["Júlia Moraes","IFRO","JULIA-MORAES.jpg","Estudante do curso Técnico em Informática integrado ao Ensino Médio no IFRO, Campus Porto Velho Zona Norte, e integrante do CIT PVH-ZN. Desde 2023 participa de competições de inovação e empreendedorismo e desenvolve o LeDuc, projeto de tecnologia aplicada à educação. Participou do IMPULSE e foi vice-campeã do Béra Hackathon – Edição Pró-Catadores 2026 com o projeto SAMAÚMA."],
+["Antonio Moreiras","NIC.br","ANTONIO-MOREIRAS.jpg","Gerente de Projetos e Desenvolvimento do Centro de Estudos e Pesquisas em Redes e Operações (Ceptro.br), do Núcleo de Informação e Coordenação do Ponto BR (NIC.br)."]
+];
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ini=n=>n.replace(/^(Dr\.|Dra\.)\s*/,"").split(/\s+/).filter(w=>/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ]/.test(w)).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+
+/* ---------- colagem ---------- */
+document.getElementById("cloud").innerHTML=Array.from({length:12},(_,i)=>`<figure><img src="foto-${String(i*2+1).padStart(2,"0")}.webp" alt="" loading="lazy" width="800" height="533"></figure>`).join("");
+
+/* ---------- palestrantes ---------- */
+document.getElementById("spk").innerHTML=S.map(([n,o,f,b])=>`
+<article class="spk">
+  ${f?`<div class="ph"><img src="${f}" alt="Foto de ${esc(n)}" loading="lazy" width="400" height="420" onerror="this.parentNode.className='ph noimg';this.parentNode.textContent='${ini(n)}'"></div>`:`<div class="ph noimg" role="img" aria-label="Foto de ${esc(n)} indisponível">${ini(n)}</div>`}
+  <h3>${esc(n)}</h3><span class="org">${esc(o)}</span>
+  <details><summary>Ler biografia</summary><p>${esc(b)}</p></details>
+</article>`).join("");
+
+/* ---------- programação com filtros ---------- */
+const ag=document.getElementById("agenda"),chips=document.getElementById("chips"),cnt=document.getElementById("count-act");
+ag.innerHTML=AG.map(([t,sub,title,type,day])=>{
+  const cls=type==="Painel"?"tag--painel":type==="Palestra"?"tag--palestra":(type==="Intervalo"||type==="Credenciamento")?"tag--pausa":"";
+  return `<li class="item" data-day="${day}" data-type="${type}"><time>${t}</time><div><h3>${esc(title)}</h3>${sub?`<p>${esc(sub)}</p>`:""}<p class="day">${DAYNAME[day]}</p></div><span class="tag ${cls}">${type}</span></li>`}).join("");
+let cur="Todos";
+function apply(f){
+  cur=f;let n=0;
+  ag.querySelectorAll(".item").forEach(li=>{
+    const ok=f==="Todos"||(f==="Dia 1"&&li.dataset.day==="1")||(f==="Dia 2"&&li.dataset.day==="2")||(f==="Painéis"&&li.dataset.type==="Painel")||(f==="Palestras"&&li.dataset.type==="Palestra");
+    li.hidden=!ok;if(ok)n++;
+  });
+  chips.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.f===f));
+  cnt.textContent=n+" de "+AG.length+" atividades";
+}
+chips.innerHTML=FILTERS.map(f=>`<button class="chip" type="button" data-f="${f}" aria-pressed="false">${f}</button>`).join("");
+chips.onclick=e=>{const b=e.target.closest(".chip");if(b)apply(b.dataset.f)};
+document.querySelectorAll("[data-filter]").forEach(a=>a.addEventListener("click",()=>apply(a.dataset.filter)));
+apply("Todos");
+
+/* ---------- menu mobile ---------- */
+const bg=document.getElementById("burger"),menu=document.getElementById("menu");
+function closeMenu(){menu.classList.remove("open");bg.setAttribute("aria-expanded","false");bg.setAttribute("aria-label","Abrir menu")}
+bg.onclick=()=>{const o=menu.classList.toggle("open");bg.setAttribute("aria-expanded",o);bg.setAttribute("aria-label",o?"Fechar menu":"Abrir menu")};
+menu.addEventListener("click",e=>{if(e.target.closest("a"))closeMenu()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&menu.classList.contains("open")){closeMenu();bg.focus()}});
+
+/* ---------- vídeo do hero (arquivo local, funciona até em file://) ---------- */
+const hv=document.getElementById("hv"),vb=document.getElementById("vctl");
+const P='<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>',Y='<path d="M7 4.5v15l13-7.5z"/>';
+function vpaint(){const p=!hv.paused;vb.querySelector("svg").innerHTML=p?P:Y;vb.setAttribute("aria-label",p?"Pausar vídeo de fundo":"Reproduzir vídeo de fundo")}
+vb.onclick=()=>{hv.paused?hv.play():hv.pause()};
+hv.addEventListener("play",vpaint);hv.addEventListener("pause",vpaint);
+if(navigator.connection&&navigator.connection.saveData){hv.removeAttribute("autoplay");hv.preload="none";hv.pause()}
+vpaint();
+
+/* ---------- contagem regressiva (Manaus, UTC-4) ---------- */
+const target=new Date("2026-11-12T00:00:00-04:00");
+function tick(){
+  const ms=target-new Date();
+  if(ms<=0){document.getElementById("count").style.display="none";return}
+  const m=Math.floor(ms/6e4);
+  cd.textContent=Math.floor(m/1440);ch.textContent=Math.floor(m%1440/60);cm.textContent=m%60;
+}
+tick();setInterval(tick,3e4);
+</script>
+</body>
+</html>

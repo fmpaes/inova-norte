@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inova Norte — comparativo de versões</title>
+<style>
+:root{--bg:#f3f1f6;--ink:#15121b;--muted:#5a5564;--line:#ddd8e5;--roxo:#67459b;--ouro:#d4a017}
+*{box-sizing:border-box}
+body{margin:0;font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(16px,3vw,48px)}
+header{padding:48px 0 24px}
+h1{font-size:clamp(1.8rem,4vw,3rem);font-weight:500;letter-spacing:-.03em;margin:0 0 8px}
+header p{color:var(--muted);max-width:70ch;margin:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:24px 0 40px}
+.card{background:#fff;border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:#ddd}
+.card div{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card .tag{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--roxo)}
+.card h2{margin:0;font-size:1.4rem;font-weight:600}
+.card p{margin:0;color:var(--muted);font-size:.96rem}
+.card ul{margin:4px 0 0;padding-left:18px;color:var(--muted);font-size:.92rem}
+.btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;background:var(--roxo);color:#fff;text-decoration:none;font-weight:600;align-self:flex-start}
+.btn:hover{background:var(--ink)}
+.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:14px}
+.bar label{font-weight:600}
+select{min-height:44px;border-radius:999px;border:1px solid var(--line);background:#fff;padding:0 16px;font:inherit}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:60px}
+.split iframe{width:100%;height:78vh;min-height:520px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.note{font-size:.88rem;color:var(--muted);margin:-6px 0 40px;max-width:80ch}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+:focus-visible{outline:3px solid var(--roxo);outline-offset:3px;border-radius:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Inova Norte Summit 26 · três versões</h1>
+    <p>Abra cada uma em tela cheia ou compare duas lado a lado. A versão mesclada junta o visual editorial do marketing com os conteúdos e melhorias de UX da nossa versão.</p>
+  </header>
+
+  <div class="cards">
+    <article class="card">
+      <img src="thumb-v1.jpg" alt="Prévia da versão 1, nossa versão">
+      <div>
+        <span class="tag">Versão 1</span>
+        <h2>Nossa versão</h2>
+        <p>Fiel ao site original, com UX melhorada.</p>
+        <ul><li>Fundo roxo e cartões translúcidos</li><li>Contagem regressiva, 11 palestrantes, patrocinadores, hotel</li><li>Vídeo do YouTube (só toca via http/https)</li></ul>
+        <a class="btn" href="../">Abrir versão 1</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="thumb-v2.jpg" alt="Prévia da versão 2, ideia do marketing">
+      <div>
+        <span class="tag">Versão 2</span>
+        <h2>Ideia do marketing</h2>
+        <p>Arquivo recebido, sem alterações.</p>
+        <ul><li>Visual editorial claro, fotos da edição anterior</li><li>Programação completa com horários (20 atividades)</li><li>Palestrantes e patrocinadores ainda "em breve"</li></ul>
+        <a class="btn" href="marketing.html">Abrir versão 2</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="thumb-v3.jpg" alt="Prévia da versão 3, mesclada">
+      <div>
+        <span class="tag">Versão 3</span>
+        <h2>Mesclada</h2>
+        <p>Visual do marketing + conteúdo e UX da nossa.</p>
+        <ul><li>Vídeo local no topo, toca sozinho em qualquer lugar</li><li>Programação com horários e filtros por dia e tipo</li><li>Palestrantes, patrocinadores, hotel, mapa e inscrição em destaque</li></ul>
+        <a class="btn" href="mesclada.html">Abrir versão 3</a>
+      </div>
+    </article>
+  </div>
+
+  <h2 style="font-weight:500;letter-spacing:-.02em;font-size:1.8rem;margin:0 0 12px">Lado a lado</h2>
+  <div class="bar">
+    <label for="a">Esquerda</label>
+    <select id="a"><option value="../">1 · Nossa versão</option><option value="marketing.html">2 · Marketing</option><option value="mesclada.html">3 · Mesclada</option></select>
+    <label for="b">Direita</label>
+    <select id="b"><option value="../">1 · Nossa versão</option><option value="marketing.html">2 · Marketing</option><option value="mesclada.html" selected>3 · Mesclada</option></select>
+  </div>
+  <p class="note">No lado a lado, cada versão aparece em meia largura, então o layout de celular pode entrar em ação. Para ver o desktop completo, use o botão "Abrir".</p>
+  <div class="split">
+    <iframe id="fa" title="Versão da esquerda" src="marketing.html"></iframe>
+    <iframe id="fb" title="Versão da direita" src="mesclada.html"></iframe>
+  </div>
+</div>
+<script>
+const a=document.getElementById("a"),b=document.getElementById("b"),fa=document.getElementById("fa"),fb=document.getElementById("fb");
+a.value="marketing.html";
+function go(){fa.src=a.value;fb.src=b.value}
+a.onchange=go;b.onchange=go;go();
+</script>
+</body>
+</html>
