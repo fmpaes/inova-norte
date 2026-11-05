@@ -443,8 +443,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&menu.classList.cont
   const box=document.getElementById("heroMedia"),btn=document.getElementById("vctl");
   const VID="MMb-_n47j3s";
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches||(navigator.connection&&navigator.connection.saveData);
-  if(reduce)return;
-  let mode=null,playing=true;
+  let mode=null,playing=!reduce,started=false,v=null;
   const ico={pause:'<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>',play:'<path d="M7 4.5v15l13-7.5z"/>'};
   function paint(){btn.querySelector("svg").innerHTML=playing?ico.pause:ico.play;btn.setAttribute("aria-label",playing?"Pausar vídeo de fundo":"Reproduzir vídeo de fundo")}
   let player=null;
@@ -464,18 +463,23 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&menu.classList.cont
     };
     const t=document.createElement("script");t.src="https://www.youtube.com/iframe_api";t.onerror=fail;document.head.appendChild(t);
   }
-  const v=document.createElement("video");
-  v.muted=true;v.loop=true;v.autoplay=true;v.playsInline=true;v.preload="metadata";v.poster="CAPA.jpg";
-  const src=document.createElement("source");src.src="hero.mp4";src.type="video/mp4";v.appendChild(src);
-  src.addEventListener("error",()=>{v.remove();yt()});
-  v.addEventListener("playing",()=>{mode="file";v.classList.add("show");btn.classList.add("on");paint()},{once:true});
-  box.appendChild(v);
+  function start(){
+    started=true;
+    v=document.createElement("video");
+    v.muted=true;v.loop=true;v.autoplay=true;v.playsInline=true;v.preload="metadata";v.poster="CAPA.jpg";
+    const src=document.createElement("source");src.src="hero.mp4";src.type="video/mp4";v.appendChild(src);
+    src.addEventListener("error",()=>{v.remove();yt()});
+    v.addEventListener("playing",()=>{mode="file";v.classList.add("show");btn.classList.add("on");paint()},{once:true});
+    box.appendChild(v);
+  }
   btn.onclick=()=>{
+    if(!started){playing=true;start();paint();return}       // reduzir animações: só toca se a pessoa pedir
     playing=!playing;
     if(mode==="file"){playing?v.play():v.pause()}
     else if(mode==="yt"&&player){playing?player.playVideo():player.pauseVideo()}
     paint();
   };
+  if(reduce){btn.classList.add("on");paint()}else start();   // com "reduzir animações" ligado, espera o clique
 })();
 
 /* contagem regressiva (horário de Manaus, UTC-4) */
