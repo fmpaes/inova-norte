@@ -442,7 +442,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&menu.classList.cont
 (function(){
   const box=document.getElementById("heroMedia"),btn=document.getElementById("vctl");
   const VID="MMb-_n47j3s";
-  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches||(navigator.connection&&navigator.connection.saveData);
+  const reduce=!!(navigator.connection&&navigator.connection.saveData);   // só espera o clique no modo economia de dados
   let mode=null,playing=!reduce,started=false,v=null;
   const ico={pause:'<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>',play:'<path d="M7 4.5v15l13-7.5z"/>'};
   function paint(){btn.querySelector("svg").innerHTML=playing?ico.pause:ico.play;btn.setAttribute("aria-label",playing?"Pausar vídeo de fundo":"Reproduzir vídeo de fundo")}
