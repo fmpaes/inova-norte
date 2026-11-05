@@ -261,6 +261,8 @@ html.tunel-on .manifesto,html.tunel-on .paineis-old{display:none}
 .tunel__info .pill{margin-top:18px;pointer-events:auto;min-height:48px}
 .tunel__prog{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(103,69,155,.15);z-index:5}
 .tunel__prog i{display:block;height:100%;background:var(--roxo);transform:scaleX(0);transform-origin:left}
+.tunel__off{position:absolute;right:var(--pad);bottom:22px;z-index:6;background:#fff;color:var(--ink);border-radius:999px;padding:10px 18px;font-size:.82rem;font-weight:600;box-shadow:0 2px 14px rgba(21,18,27,.14);min-height:44px}
+.tunel__off:hover{background:var(--ink);color:#fff}
 .tunel__credito{position:absolute;top:92px;right:var(--pad);z-index:4;font-size:.78rem;color:var(--muted)}
 </style>
 </head>
@@ -321,6 +323,7 @@ html.tunel-on .manifesto,html.tunel-on .paineis-old{display:none}
     <div class="tunel__world" id="tw" aria-hidden="true"></div>
     <div class="tunel__frase" id="tf"><div><h2>Soberania digital começa por <b>quem conecta o Norte.</b></h2><p>Mais de 400 pessoas na mesma sala. Role para entrar.</p></div></div>
     <div class="tunel__dica" id="td"><i></i>Role para entrar</div>
+    <button class="tunel__off" id="toff" type="button">Prefiro cartões simples (sem movimento)</button>
     <span class="tunel__credito">Imagens: edição anterior</span>
     <div class="tunel__info" id="ti"><article data-i="0"><span class="no">01 / 05</span><small>Dia 1 · quinta, 12/11 · 11h–12h30</small><h3>Conectar a Amazônia</h3><p>O desafio da infraestrutura digital na maior região do Brasil.</p><a class="pill pill--ouro" href="#programacao" data-filter="Dia 1">Ver programação →</a></article><article data-i="1"><span class="no">02 / 05</span><small>Dia 1 · quinta, 12/11 · 14h–15h30</small><h3>Governo Inteligente</h3><p>IA e Dados transformando os Serviços Públicos.</p><a class="pill pill--ouro" href="#programacao" data-filter="Dia 1">Ver programação →</a></article><article data-i="2"><span class="no">03 / 05</span><small>Dia 2 · sexta, 13/11 · 11h–12h30</small><h3>Amazônia Conectada</h3><p>Como vencer a última fronteira da infraestrutura digital brasileira?</p><a class="pill pill--ouro" href="#programacao" data-filter="Dia 2">Ver programação →</a></article><article data-i="3"><span class="no">04 / 05</span><small>Dia 2 · sexta, 13/11 · 14h–15h30</small><h3>Da Fibra ao Satélite</h3><p>Qual é a arquitetura ideal para conectar o Norte?</p><a class="pill pill--ouro" href="#programacao" data-filter="Dia 2">Ver programação →</a></article><article data-i="4"><span class="no">05 / 05</span><small>Dia 2 · sexta, 13/11 · 16h–17h</small><h3>Norte 2030</h3><p>Como tecnologia e conectividade podem redesenhar os serviços públicos na Amazônia?</p><a class="pill pill--ouro" href="#programacao" data-filter="Dia 2">Ver programação →</a></article></div>
     <div class="tunel__prog"><i id="tp"></i></div>
@@ -600,7 +603,9 @@ tick();setInterval(tick,3e4);
   var sec=document.getElementById("tunel");if(!sec)return;
   var mq=window.matchMedia("(min-width:900px) and (hover:hover) and (pointer:fine)");
   var rm=window.matchMedia("(prefers-reduced-motion:reduce)");
-  var ok=mq.matches&&!rm.matches&&!(navigator.connection&&navigator.connection.saveData);
+  var pref="";try{pref=localStorage.getItem("tunel")||""}catch(e){}
+  if(/[?&]tunel=off/.test(location.search))pref="off";
+  var ok=mq.matches&&pref!=="off"&&!(navigator.connection&&navigator.connection.saveData);
   if(!ok)return;
   var root=document.documentElement;root.classList.add("tunel-on");
   var old=document.getElementById("paineis");if(old){old.removeAttribute("id");old.classList.add("paineis-old")}sec.id="paineis";
@@ -691,8 +696,8 @@ tick();setInterval(tick,3e4);
   var mx=0,my=0;stage.addEventListener("pointermove",function(e){var b=stage.getBoundingClientRect();mx=(e.clientX-b.left)/b.width-.5;my=(e.clientY-b.top)/b.height-.5;stage.style.perspectiveOrigin=(50+mx*8)+"% "+(50+my*8)+"%"},{passive:true});
   addEventListener("scroll",req,{passive:true});addEventListener("resize",size);
   // se o usuário ativar "reduzir movimento" ou diminuir a janela, volta ao layout estático
-  function off(){if(!(mq.matches&&!rm.matches)){root.classList.remove("tunel-on");sec.removeAttribute("id");if(old){old.id="paineis";old.classList.remove("paineis-old")}}}
-  mq.addEventListener&&mq.addEventListener("change",off);rm.addEventListener&&rm.addEventListener("change",off);
+  function off(force){if(force===true||!mq.matches){root.classList.remove("tunel-on");sec.removeAttribute("id");if(old){old.id="paineis";old.classList.remove("paineis-old")}}}
+  mq.addEventListener&&mq.addEventListener("change",function(){off()});var ob=document.getElementById("toff");if(ob)ob.addEventListener("click",function(){try{localStorage.setItem("tunel","off")}catch(e){}off(true);var t=document.querySelector(".paineis-old");location.hash="";scrollTo(0,0)});
   size();
 })();
 </script>
